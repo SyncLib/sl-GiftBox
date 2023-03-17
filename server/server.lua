@@ -5,10 +5,8 @@ local QBCore = exports['qb-core']:GetCoreObject()
 QBCore.Functions.CreateUseableItem("giftbox", function(source, item)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-    if Player.Functions.GetItemByName(item.name) then
-        Player.Functions.RemoveItem('giftbox', 1)
+    if not Player.Functions.RemoveItem('giftbox') then return end
         TriggerClientEvent('mk-GiftBox:OpenGiftBox', src, item)
-    end
 end)
 
 -- Gift Box Rewards --
