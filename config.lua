@@ -10,7 +10,7 @@ Config.Rewards = {
     {Name = "lighter", Amount = 1},
 }
 
--- Gift Box Setup / Config --
+-- Gift Box Config --
 Config.MaxRewards = 3 -- Max Rewards the player will receive on-opening GiftBox
 
 Config.ProgressBarInteger = 25000 -- Amount of time for all progress bars to complete (ms)
