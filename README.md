@@ -23,7 +23,7 @@
 * Drag and drop into `[standalone]` remove `-main` from file name
 * Restart your server
 
-## qb-core > shared > main.lua
+## qb-core > shared > main.lua > Paste to `QBShared.StarterItems` table
 ```lua
     ['giftbox'] = { amount = 1, item = 'giftbox' },
 ```
