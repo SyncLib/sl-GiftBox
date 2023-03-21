@@ -1,4 +1,4 @@
--- QBCore Exports / Variables --
+-- QBCore Exports --
 local QBCore = exports['qb-core']:GetCoreObject()
 
 -- Gift Box Progress Bar On-Opening --
