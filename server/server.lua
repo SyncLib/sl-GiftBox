@@ -22,7 +22,7 @@ RegisterNetEvent('mk-GiftBox:server:GiftBoxRewards', function()
             local Item = Config.Rewards[math.random(#Config.Rewards)]
             if not givenRewards[Item.Name] then -- check if the item has already been given
                 itemFound = true
-                givenRewards[Item.Name] = true -- mark the item as given
+                givenRewards[Item.Name] = true -- mark the item as given ()
                 table.insert(ItemsTable, {Name = Item.Name, Amount = Item.Amount})
             end
         end
