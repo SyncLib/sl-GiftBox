@@ -14,10 +14,18 @@ RegisterNetEvent('mk-GiftBox:server:GiftBoxRewards', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local ItemsTable = {}
+    local givenRewards = {} -- keep track of given rewards
 
     for i = 1, Config.MaxRewards do
-        local Item = Config.Rewards[math.random(#Config.Rewards)]
-        table.insert(ItemsTable, {Name = Item.Name, Amount = Item.Amount})
+        local itemFound = false
+        while not itemFound do
+            local Item = Config.Rewards[math.random(#Config.Rewards)]
+            if not givenRewards[Item.Name] then -- check if the item has already been given
+                itemFound = true
+                givenRewards[Item.Name] = true -- mark the item as given
+                table.insert(ItemsTable, {Name = Item.Name, Amount = Item.Amount})
+            end
+        end
     end
 
     for _, Item in ipairs(ItemsTable) do
