@@ -2,7 +2,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 -- Gift Box Progress Bar On-Opening --
-RegisterNetEvent('mk-GiftBox:OpenGiftBox', function(source)
+RegisterNetEvent('mk-GiftBox:client:OpenGiftBox', function(source)
     local src = source
     QBCore.Functions.Progressbar('unwrapping_present', 'Unwrapping present', Config.ProgressBarInteger, false, true, {
         disableMovement = true,
