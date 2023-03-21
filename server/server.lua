@@ -1,4 +1,4 @@
--- QBCore Exports / Variables --
+-- QBCore Exports --
 local QBCore = exports['qb-core']:GetCoreObject()
 
 -- Gift Box Useable Item Event --
@@ -13,23 +13,24 @@ end)
 RegisterNetEvent('mk-GiftBox:server:GiftBoxRewards', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
-    local ItemsTable = {}
-    local givenRewards = {} -- keep track of given rewards
+    local RewardsTable = {}
+    local TrackRewards = {}
 
     for i = 1, Config.MaxRewards do
-        local itemFound = false
-        while not itemFound do
-            local Item = Config.Rewards[math.random(#Config.Rewards)]
-            if not givenRewards[Item.Name] then -- check if the item has already been given
-                itemFound = true
-                givenRewards[Item.Name] = true -- mark the item as given ()
-                table.insert(ItemsTable, {Name = Item.Name, Amount = Item.Amount})
+        local ItemFound = false
+        while not ItemFound do
+            local Reward = Config.Rewards[math.random(#Config.Rewards)]
+            if not TrackRewards[Reward.Name] then
+                ItemFound = true
+                TrackRewards[Reward.Name] = true
+                table.insert(RewardsTable, {Name = Reward.Name, Amount = Reward.Amount})
             end
         end
     end
 
-    for _, Item in ipairs(ItemsTable) do
-        Player.Functions.AddItem(Item.Name, Item.Amount)
-        TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items[Item.Name], 'add', 1)
+    for _, Reward in ipairs(RewardsTable) do
+        Player.Functions.AddItem(Reward.Name, Reward.Amount)
+        local RewardData = QBCore.Shared.Items[Reward.Name]
+        TriggerClientEvent('inventory:client:ItemBox', src, RewardData, 'add', 1)
     end
 end)
