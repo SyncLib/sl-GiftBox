@@ -27,3 +27,9 @@
 ```lua
     ['giftbox'] = { amount = 1, item = 'giftbox' },
 ```
+
+## qb-inventory > shared > items.lua
+```lua
+	-- Starter Gift Box
+	['giftbox']             		= {['name'] = 'giftbox',                		['label'] = 'Starter Gift Box',       	['weight'] = 0,         ['type'] = 'item',      ['image'] = 'giftbox.png',     		    ['unique'] = true,      ['useable'] = true,     ['shouldClose'] = true,   ['combinable'] = nil,   ['description'] = 'A Present with various items'},
+```
