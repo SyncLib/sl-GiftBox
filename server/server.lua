@@ -23,7 +23,7 @@ RegisterNetEvent('mk-GiftBox:server:GiftBoxRewards', function()
             if not TrackRewards[Reward.Name] then
                 ItemFound = true
                 TrackRewards[Reward.Name] = true
-                table.insert(RewardsTable, {Name = Reward.Name, Amount = Reward.Amount})
+                RewardsTable[#RewardsTable + 1] = {Name = Reward.Name, Amount = Reward.Amount}
             end
         end
     end
