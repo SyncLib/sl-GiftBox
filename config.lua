@@ -11,6 +11,6 @@ Config.Rewards = {
 }
 
 -- Gift Box Config --
-Config.MaxRewards = 3 -- Max Rewards the player will receive on-opening GiftBox
+Config.MaxRewards = 3 -- Max Rewards the player will receive upon opening the GiftBox
 
-Config.ProgressBarInteger = 25000 -- Amount of time for all progress bars to complete (ms)
+Config.ProgressBarInteger = 10000 -- Amount of time for all progress bars to complete (ms)

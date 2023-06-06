@@ -6,25 +6,22 @@ QBCore.Functions.CreateUseableItem("giftbox", function(source, item)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     if not Player.Functions.RemoveItem('giftbox') then return end
-        TriggerClientEvent('mk-GiftBox:client:OpenGiftBox', src, item)
+        TriggerClientEvent('mk-GiftBox:Client:OpenGiftBox', src, item)
 end)
 
 -- Gift Box Rewards --
-RegisterNetEvent('mk-GiftBox:server:GiftBoxRewards', function()
+RegisterNetEvent('mk-GiftBox:Server:GiftBoxRewards', function()
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
+    local MaxRewards = Config.MaxRewards
     local RewardsTable = {}
     local TrackRewards = {}
 
-    for i = 1, Config.MaxRewards do
-        local ItemFound = false
-        while not ItemFound do
-            local Reward = Config.Rewards[math.random(#Config.Rewards)]
-            if not TrackRewards[Reward.Name] then
-                ItemFound = true
-                TrackRewards[Reward.Name] = true
-                RewardsTable[#RewardsTable + 1] = {Name = Reward.Name, Amount = Reward.Amount}
-            end
+    while #RewardsTable < MaxRewards do
+        local Reward = Config.Rewards[math.random(#Config.Rewards)]
+        if not TrackRewards[Reward.Name] then
+            TrackRewards[Reward.Name] = true
+            RewardsTable[#RewardsTable + 1] = { Name = Reward.Name, Amount = Reward.Amount }
         end
     end
 
