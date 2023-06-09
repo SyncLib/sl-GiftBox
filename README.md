@@ -1,5 +1,4 @@
-<br />
-  <h3 align="center">STARTER GIFT BOX</h3>
+<h3 align="center">STARTER GIFT BOX</h3>
 
   <p align="center">
     Free, open source starter gift box using the QBCore Framework
