@@ -6,10 +6,6 @@
     <br />
     <br />
     <a href="https://youtu.be/mtoYvVRTMK4">Showcase</a>
-    ·
-    <a href="https://github.com/ImMacky/mk-GiftBox/issues">Bug Report</a>
-    ·
-    <a href="https://github.com/ImMacky/mk-GiftBox/issues">Suggestions</a>
   </p>
 </p>
 
@@ -20,7 +16,7 @@
 ## Installation
 
 * Download ZIP
-* Drag and drop into `[standalone]` remove `-main` from file name
+* Drag and drop into `[standalone]`
 * Restart your server
 
 ## qb-core > shared > main.lua > Paste to `QBShared.StarterItems` table
