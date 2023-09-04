@@ -25,6 +25,11 @@
 
 ## qb-inventory > html > images
 ```lua
+mk-GiftBox/images/giftbox.png
+```
+
+## qb-core > shared > items.lua
+```lua
 	-- Starter Gift Box
 	['giftbox']             		= {['name'] = 'giftbox',                		['label'] = 'Starter Gift Box',       	['weight'] = 0,         ['type'] = 'item',      ['image'] = 'giftbox.png',     		    ['unique'] = true,      ['useable'] = true,     ['shouldClose'] = true,   ['combinable'] = nil,   ['description'] = 'A Present with various items'},
 ```
