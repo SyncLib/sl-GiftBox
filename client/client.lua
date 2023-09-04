@@ -13,8 +13,10 @@ RegisterNetEvent('mk-GiftBox:Client:OpenGiftBox', function(source)
     animDict = 'anim@gangops@facility@servers@',
         anim = 'hotwire',
         flags = 17,
-    }, {}, {}, function()
+    }, {}, {}, function() -- Play when Done
         ClearPedTasks(PlayerPedId())
         TriggerServerEvent('mk-GiftBox:Server:GiftBoxRewards')
+    end, function() -- Play When Cancel
+        ClearPedTasks(PlayerPedId())
     end)
 end)
