@@ -25,7 +25,7 @@
 
 ## qb-inventory > html > images
 ```lua
-mk-GiftBox/images/giftbox.png
+sl-GiftBox/images/giftbox.png
 ```
 
 ## qb-core > shared > items.lua

@@ -2,7 +2,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 -- Gift Box Progress Bar On-Opening --
-RegisterNetEvent('mk-GiftBox:Client:OpenGiftBox', function(source)
+RegisterNetEvent('sl-GiftBox:Client:OpenGiftBox', function(source)
     TriggerServerEvent("InteractSound_SV:PlayOnSource", "Stash", 0.25)
     QBCore.Functions.Progressbar('unwrapping_present', 'Unwrapping present', Config.ProgressBarInteger, false, true, {
         disableMovement = true,
@@ -15,7 +15,7 @@ RegisterNetEvent('mk-GiftBox:Client:OpenGiftBox', function(source)
         flags = 17,
     }, {}, {}, function() -- Play when Done
         ClearPedTasks(PlayerPedId())
-        TriggerServerEvent('mk-GiftBox:Server:GiftBoxRewards')
+        TriggerServerEvent('sl-GiftBox:Server:GiftBoxRewards')
     end, function() -- Play When Cancel
         ClearPedTasks(PlayerPedId())
     end)
