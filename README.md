@@ -1,7 +1,7 @@
 <h3 align="center">STARTER GIFT BOX</h3>
 
   <p align="center">
-    Free, open source starter gift box using the QBCore Framework
+    Free, open source starter gift box using the QBCore or Qbox Framework.
     <br />
     <br />
     <a href="https://youtu.be/mtoYvVRTMK4">Showcase</a>
@@ -11,6 +11,11 @@
 ## Prerequisites
 
 * [QBCore Framework](https://github.com/qbcore-framework)
+* [Qbox Framework](https://github.com/Qbox-project)
+
+## Inventory
+* [qb-inventory](https://github.com/qbcore-framework/qb-inventory)
+* [ox_inventory](https://github.com/overextended/ox_inventory)
 
 ## Installation
 
@@ -22,6 +27,8 @@
 ```lua
     ['giftbox'] = { amount = 1, item = 'giftbox' },
 ```
+--  For qbx_core
+## qbx_core > config > shared.lua > Paste below `starterItems` table
 
 ## qb-inventory > html > images
 ```lua
@@ -33,3 +40,20 @@ sl-GiftBox/images/giftbox.png
 	-- Starter Gift Box
 	['giftbox']             		= {['name'] = 'giftbox',                		['label'] = 'Starter Gift Box',       	['weight'] = 0,         ['type'] = 'item',      ['image'] = 'giftbox.png',     		    ['unique'] = true,      ['useable'] = true,     ['shouldClose'] = true,   ['combinable'] = nil,   ['description'] = 'A Present with various items'},
 ```
+
+## OX_Inventory
+    -- Starter Gift Box
+    
+    ['giftbox'] = {
+        label = "Starter Gift Box",
+        weight = 10,
+        stack = false,
+        close = true,
+        description = "A Present with various items",
+        client = {
+            use = function(item)
+                TriggerServerEvent('sl-GiftBox:Server:UseGiftBox', item)
+            end
+        }
+    },
+

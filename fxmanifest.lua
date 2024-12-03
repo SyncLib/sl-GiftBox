@@ -4,7 +4,7 @@ lua54 'yes'
 
 description 'Free, open source starter gift box'
 author 'Macky'
-version '1.5.4'
+version '1.5.5'
 
 server_script 'server/*.lua'
 

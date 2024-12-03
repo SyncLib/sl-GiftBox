@@ -2,8 +2,8 @@ Config = {}
 
 -- Rewards Table (add rewards below) --
 Config.Rewards = {
-    {Name = "tosti", Amount = 10},
-    {Name = "water_bottle", Amount = 10},
+    {Name = "sandwich", Amount = 10},
+    {Name = "water", Amount = 10},
     {Name = "bandage", Amount = 8},
     {Name = "lockpick", Amount = 5},
     {Name = "radio", Amount = 1},
